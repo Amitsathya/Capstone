@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img class="hide-img" (load)="imageLoadEvent()" #imgEl *ngIf="picture" [src]="picture" />
+  <canvas #canvasEl ></canvas>
+  <div class="chat-box">
+    <div class="chat-box-body">
+      <div class="chat-logs">
+        <div *ngFor="let message of messages ">
+          <div class="user-reply" *ngIf="!message.bot">{{message.message}}</div>
+          <div class="bot-reply" *ngIf="message.bot">{{message.message}}</div>   
+        </div>  
+        <div class="bot-reply dots reply" *ngIf="bot"><span></span><span></span><span></span></div>
+        <div class="end-of-chat"></div>     
+      </div>
+    </div>
+  </div>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="StartListening()">
+      <ion-icon name="mic-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "capstone",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
