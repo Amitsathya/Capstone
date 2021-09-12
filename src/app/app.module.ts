@@ -12,13 +12,15 @@ import { ChatService } from "./service/chat.service";
 import { CameraPreview } from '@ionic-native/camera-preview/ngx';
 import { SpeechRecognition } from "@ionic-native/speech-recognition/ngx";
 import { TextToSpeech } from "@ionic-native/text-to-speech/ngx";
+import { OCR} from '@ionic-native/ocr/ngx';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(),
     HttpClientModule, AppRoutingModule],
   providers: [ChatService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    CameraPreview,SpeechRecognition,TextToSpeech],
+    CameraPreview,SpeechRecognition,TextToSpeech, OCR, NativeAudio],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
